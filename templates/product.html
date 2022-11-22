@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="static/css/product.css">
+</head>
+<body>
+    <h1 id="logo">Shoe Factory</h1>
+    <div id="nav">
+        <button class="nav-button" id="home-buttoon" onclick="location.href='index.html'">Home</button>
+        <button class="nav-button" id="brands-btn" onclick="location.href='brands.html'">Brands</button>
+        <input type="text" name="saerch" id="nav-search" placeholder="Search Shoes">
+        <button class="nav-button" id="about-btn" onclick="location.href='about.html'">About</button>
+        <button class="nav-button" id="privacy-btn" onclick="location.href='privacy.html'">Privacy Policy</button>
+        <button class="nav-button" id="myaccount-btn">My Account <span id="drop_btn">❮</span></button>
+        <button class="nav-button" id="login-btn" onclick="location.href='login.html'">Login</button>
+        <button class="nav-button" id="signup-btn" onclick="location.href='signup.html'">Signup</button>
+        <img src="static/images/cart.svg" class="nav-button" id="cart" alt="Cart" onclick="location.href='cart.html'">
+    </div>
+    <div id="myaccount-options">
+        <a href="myprofile.html"><div class="myaccount-options">My Profile</div></a>
+        <a href="wishlist.html"><div class="myaccount-options">Wishlist</div></a>
+        <a href="orders.html"><div class="myaccount-options">Orders</div></a>
+        <a href="logout.html"><div class="myaccount-options">Logout</div></a>
+    </div>
+    <div id="serach-suggestion">
+        <div class="suggestion"></div>
+        <div class="suggestion"></div>
+        <div class="suggestion"></div>
+    </div>
+
+    <div id="carousel">
+        <img src="static/images/first.jpg" alt="" class="carousel-image" id="first-image">
+        <img src="static/images/second.jpg" alt="" class="carousel-image" id="second-image">
+        <img src="static/images/third.jpg" alt="" class="carousel-image" id="third-image">
+        <img src="static/images/fourth.jpg" alt="" class="carousel-image" id="fourth-image">
+        <div id="buttons">
+            <span id="prev" onclick="change_image(-1)">❮</span>   <span id="next" onclick="change_image(1)">❯</span>
+        </div>
+    </div>
+
+    <div id="dots">
+        <span class="dot" id="first-dot"></span> 
+        <span class="dot" id="second-dot"></span>
+        <span class="dot" id="third-dot"></span>
+        <span class="dot" id="fourth-dot"></span>
+    </div>
+    <div id="act-btns">
+        <button id="add-cart"><span>ADD TO CART</span>
+            </button>
+        <button id="buy-now" onclick="location.href='checkout.html'"><span>BUY NOW</span></button>
+    </div>
+    <div id="prod-desc">
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perdolor sit amet consectetur adipisicing elit. Perferendis, dignissimos.</h1>
+        <h2 id="price">₹499</h2><h2 id="mrp">₹4999</h2><h4 id="discount">34% Discount</h4>
+        <p id="desc">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi vero est ea amet minima sequi quaerat 
+            quibusdam tempore repellat. Minus adipisci voluptates, distinctio architecto laboriosam temporibus ut 
+            blanditiis fugiat nostrum maiores nemo laborum ducimus non impedit quis minima sequi! Doloremque, impedit 
+            ex mollitia maxime ipsum earum deleniti assumenda rerum praesentium velit. Error, repellat! Magnam dolore
+            , eaque repudiandae sint obcaecati consequuntur, pariatur vero tenetur quas consequatur soluta enim eligen
+            di rem odit! Pariatur voluptas quas repellat sint consequatur voluptate, iusto, minus beatae, dolorum quod
+             assumenda! Consequatur minus debitis nobis libero aut officia aspernatur. Eaque ex minima tempore unde dol
+             or, fugit assumenda saepe.
+        </p>
+    </div>
+    <div id="all-products">
+        <h1>More Products</h1>
+        <a href="product.html">
+        <div class="product" id="featured-1">
+            <img src="static/images/first.jpg" alt="">
+            <p class="product-price">Product Price Here</p>
+            <p class="product-desc">Product Discription Here</p>
+        </div>
+        <div class="product" id="featured-2">
+            <img src="static/images/second.jpg" alt="" >
+            <p class="product-price">Product Price Here</p>
+            <p class="product-desc">Product Discription Here</p>
+        </div>
+        <div class="product" id="featured-3">
+            <img src="static/images/third.jpg" alt="" >
+            <p class="product-price">Product Price Here</p>
+            <p class="product-desc">Product Discription Here</p>
+        </div>
+        <div class="product" id="featured-4">
+            <img src="static/images/fourth.jpg" alt="" >
+            <p class="product-price">Product Price Here</p>
+            <p class="product-desc">Product Discription Here</p>
+        </div>
+        <div class="product" id="featured-1">
+            <img src="static/images/first.jpg" alt="">
+            <p class="product-price">Product Price Here</p>
+            <p class="product-desc">Product Discription Here</p>
+        </div>
+        <div class="product" id="featured-2">
+            <img src="static/images/second.jpg" alt="" >
+            <p class="product-price">Product Price Here</p>
+            <p class="product-desc">Product Discription Here</p>
+        </div>
+        <div class="product" id="featured-3">
+            <img src="static/images/third.jpg" alt="" >
+            <p class="product-price">Product Price Here</p>
+            <p class="product-desc">Product Discription Here</p>
+        </div>
+        <div class="product" id="featured-4">
+            <img src="static/images/fourth.jpg" alt="" >
+            <p class="product-price">Product Price Here</p>
+            <p class="product-desc">Product Discription Here</p>
+        </div>
+    </a>
+    </div>
+    <script src="static/js/index.js"></script>
+</body>
+</html>

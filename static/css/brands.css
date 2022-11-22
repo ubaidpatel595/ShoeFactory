@@ -1,0 +1,25 @@
+#brands{
+    background-color: rgba(205, 255, 174, 0.472);
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-bottom: 20px;
+}
+.brand-names{
+    height: calc(90vh/2);
+    width: calc(90vw/4.45);
+    margin-right:20px;
+    margin-top: 20px;
+    display: inline-block;
+    border-radius: 10px;
+}
+.brand-names img{
+    width: 90%;
+    height: 90%;
+    transform: scale(0.9);
+    display: block;
+    margin:auto;
+    border-radius: 10px;
+}

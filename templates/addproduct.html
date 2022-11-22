@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Product</title>
+    <link rel="stylesheet" href="static/css/addproduct.css">
+</head>
+<body>
+    <h1>Product Listing</h1>
+    <div class="img_container">
+        Image 1 :<input type="file" name="" id="1" class="image" onchange="load_image">
+        <img src="URL.createObjectURL(event.target.files[0]);" alt="" srcset="" id="img1">
+    </div>
+    <div class="img_container">
+        Image 2 :<input type="file" name="" id="2" class="image">
+        <img src="" alt="" srcset="" id="img2">
+    </div>
+    <div class="img_container">
+        Image 3 :<input type="file" name="" id="3" class="image">
+        <img src="" alt="" srcset="" id="img3">
+    </div>
+    <div class="img_container">
+        Image 4 :<input type="file" name="" id="4" class="image">
+        <img src="" alt="" srcset="" id="img4">
+    </div>
+    <div class="img_container">
+        Image 5 :<input type="file" name="" id="5" class="image">
+        <img src="" alt="" srcset="" id="img5">
+    </div>
+    <div id="prod-details">
+        <form action="">
+        <table>
+            <tr><td>Title</td><td>:</td><td><input type="text" name="title"></td></tr>
+            <tr><td>Price</td><td>:</td><td><input type="text" name="price"></td></tr>
+            <tr><td>Mrp</td><td>:</td><td><input type="text" name="mrp"></td></tr>
+            <tr><td>Delivery</td><td>:</td><td><input type="text" name="delivery"></td></tr>
+        </table>
+        <textarea name="desc" id="" cols="80" rows="15" > 
+            Enter Product Description
+        </textarea><br>
+        <button type="submit">List Now</button>
+    </form>
+    </div>
+    <script>
+        var images = document.getElementsByClassName("image");
+        var file="";
+        var reader = new FileReader;
+        //Adding eventlisteners
+        for (x in images){
+            images[x].addEventListener("change",load_image)
+        }
+        function load_image(){
+           var id = event.target.id
+           document.getElementById("img"+id).src = URL.createObjectURL(event.target.files[0]);
+           console.log(URL.createObjectURL(event.target.files[0]))
+        }
+    </script>
+</body>
+</html>
