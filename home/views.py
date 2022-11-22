@@ -2,6 +2,7 @@ from django.shortcuts import render,HttpResponse,redirect
 from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.models import User
+from datetime import datetime
 # Create your views here.
 def index(request):
     return render(request,'index.html')
@@ -56,3 +57,25 @@ def wishlist(request):
 def logout_user(request):
     logout(request)
     return redirect("/")
+def productlisting(request):
+    if request.method == "POST":
+        #Generating Unique File Name
+        curr_time=str(datetime.now())
+        curr_time = curr_time[0:24]
+        sym=[" ","-",".",":"]
+        time_string=""
+        for char in curr_time:
+            if char in sym :
+                continue
+            else:
+                time_string +=char
+        print(time_string)
+        #Uploading File to Srver
+        files = request.FILES
+        for file in files:
+           upload_file = files[file]
+           file_write = open(f"static/uploads/{time_string}{str(files[file])}","wb+")
+           for chunk in upload_file.chunks():
+            file_write.write(chunk)
+           file_write.close()
+    return render(request,'addproduct.html')
