@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv={{ meta_redirect }} content="3; url='/'">
     <title>Shoe Factory</title>
     <link rel="stylesheet" href="static/css/index.css">
     <link rel="stylesheet" href="static/css/login.css">
@@ -32,24 +33,34 @@
         <div class="suggestion"></div>
         <div class="suggestion"></div>
     </div>
-    <div id="login-form">
-        <form action="">
+    <div id="login-form" style="height:auto">
+        {% if messages %}
+        {% for x in messages %}
+        {{ x }}
+        {% endfor %}
+        {% endif %}
+        <form action="" method="POST">
+            {% csrf_token %}
             <table>
                 <tr>
-                    <td>Full name:</td>
-                    <td><input type="text" name="username" title="username"></td>
+                    <td>First name:</td>
+                    <td><input type="text" name="firstname"></td>
+                </tr>
+                <tr>
+                    <td>Last name:</td>
+                    <td><input type="text" name="lastname"></td>
                 </tr>
                 <tr>
                     <td>Mobile:</td>
-                    <td><input type="text" name="username" title="username"></td>
+                    <td><input type="text" name="mobile"></td>
                 </tr>
                 <tr>
                     <td>Email:</td>
-                    <td><input type="text" name="username" title="username"></td>
+                    <td><input type="text" name="email"></td>
                 </tr>
                 <tr>
                     <td>Password:</td>
-                    <td><input type="text" name="password" title="password"></td>
+                    <td><input type="text" name="password"></td>
                 </tr>
             </table>
             <button type="submit" name="login" id="submit-button">Signup</button>
