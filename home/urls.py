@@ -8,4 +8,8 @@ urlpatterns = [
     path('signup.html',views.signup),
     path('logout.html',views.logout_user),
     path('productlisting',views.productlisting),
+    path('test',views.test),
+    path('api',views.api),
+    path('products',views.prod_page),
+    path('api/product',views.api_product),
 ]

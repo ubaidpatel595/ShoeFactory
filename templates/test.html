@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<body>
+    <div id="demo">
+        <p>Let AJAX change this text.</p>
+        <button type="button" onclick="loadDoc()">Change Content</button>
+        </div>
+        
+        <script>
+        function loadDoc() {
+        function loaddata() {
+            var response = this.responseText;
+            var data_list = JSON.parse(response.replace(/\'/g,"\""))
+            console.log((data_list))
+            create_elements(data_list)
+        }
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = loaddata;
+        xhttp.open("GET", "api");
+        xhttp.send();
+        }
+        function create_elements(data){
+            console.log("Its Create Time")
+            for(x in data){
+                pid=data[x][0]
+                title=data[x][1]
+                price=data[x][2]
+                mrp=data[x][3]
+                delivery=data[x][4]
+                desc=data[x][5]
+                image=data[x][6][0]
+                console.log(pid+title+price+mrp+delivery+desc+image)
+                console.log("new")
+            }
+        }
+
+        </script>
+        
+</body>
+</html>

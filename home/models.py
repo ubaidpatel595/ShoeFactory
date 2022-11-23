@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class products(models.Model):
-    pid = models.AutoField(primary_key=True)
+    pid = models.TextField(default="",primary_key=True)
     title = models.TextField(max_length=200,default="")
     price = models.TextField(max_length=6,default="")
     mrp = models.TextField(max_length=6,default="")

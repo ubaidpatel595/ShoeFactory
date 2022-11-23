@@ -1,0 +1,45 @@
+#prod-desc{
+    width: 70%;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+#act-btns{
+    width: max-content;
+    height: 50px;
+    margin: auto;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+#buy-now,#add-cart{
+    background-color: rgb(236, 183, 79);
+    border-radius: 5px;
+    text-align: center;
+    height: inherit;
+    font-size: 20px;
+}
+#add-cart{
+    margin-right: 50px;
+}
+#prod-desc{
+    text-align: center;
+}
+#prod-desc #mrp{
+    margin-top: 0px;
+    display: inline-block;
+    text-decoration: line-through 2px solid;
+}
+#prod-desc #price{
+    margin-top: 0px;
+    display: inline-block;
+    margin-right: 30px;
+}
+#prod-desc #discount{
+    margin-top: 0px;
+    display: inline-block;
+    margin-left: 30px;
+}
+#prod-desc p{
+    width: 80%;
+    margin: auto;
+}
