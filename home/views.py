@@ -133,12 +133,14 @@ def prod_page(request):
     #return HttpResponse(pi)
     return render(request,"product.html")
 def api_product(request):
+    response_list = []
     get_pid = request.GET.get('pid')
-    obj = products.objects.get(pid=get_pid)
-    obj.images
-    obj.title
-    obj.price
-    obj.mrp
-    obj.desc
-    obj.delivery
-    return HttpResponse(obj.images)
+    prod_n = products.objects.get(pid=get_pid)
+    response_list.append(str(prod_n.title))
+    response_list.append(str(prod_n.price))
+    response_list.append(str(prod_n.mrp))
+    response_list.append(str(prod_n.delivery))
+    response_list.append(str(prod_n.desc))
+    response_list.append(eval(prod_n.images))
+    print(response_list)
+    return HttpResponse(str(response_list))

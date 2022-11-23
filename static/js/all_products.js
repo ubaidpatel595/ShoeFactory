@@ -55,7 +55,8 @@ function data_abs (data){
         mrp=data[x][3];
         delivery=data[x][4];
         desc=data[x][5];
+        desc = desc.slice(0,50)+"...";
         image=data[x][6][0];
-        all_prods.appendChild(create_prod(image,price,mrp,desc))
+        all_prods.appendChild(create_prod(image,price,mrp,title))
     }
 }

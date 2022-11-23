@@ -33,21 +33,19 @@
         <div class="suggestion"></div>
     </div>
 
-    <div id="carousel">
-        <img src="static/images/first.jpg" alt="" class="carousel-image" id="first-image">
-        <img src="static/images/second.jpg" alt="" class="carousel-image" id="second-image">
-        <img src="static/images/third.jpg" alt="" class="carousel-image" id="third-image">
-        <img src="static/images/fourth.jpg" alt="" class="carousel-image" id="fourth-image">
+    <div id="carousel" style="background-color:rgba(161, 177, 146, 0.673);">
         <div id="buttons">
             <span id="prev" onclick="change_image(-1)">❮</span>   <span id="next" onclick="change_image(1)">❯</span>
         </div>
+        <!--<img src="static/images/first.jpg" alt="" class="carousel-image" id="first-image">
+        <img src="static/images/second.jpg" alt="" class="carousel-image" id="second-image">
+        <img src="static/images/third.jpg" alt="" class="carousel-image" id="third-image">
+        <img src="static/images/fourth.jpg" alt="" class="carousel-image" id="fourth-image">
+        -->
     </div>
 
     <div id="dots">
-        <span class="dot" id="first-dot"></span> 
-        <span class="dot" id="second-dot"></span>
-        <span class="dot" id="third-dot"></span>
-        <span class="dot" id="fourth-dot"></span>
+        <!--<span class="dot" id="first-dot"></span> -->
     </div>
     <div id="act-btns">
         <button id="add-cart"><span>ADD TO CART</span>
@@ -55,8 +53,8 @@
         <button id="buy-now" onclick="location.href='checkout.html'"><span>BUY NOW</span></button>
     </div>
     <div id="prod-desc">
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perdolor sit amet consectetur adipisicing elit. Perferendis, dignissimos.</h1>
-        <h2 id="price">₹499</h2><h2 id="mrp">₹4999</h2><h4 id="discount">34% Discount</h4>
+        <h1 id="prod-title">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perdolor sit amet consectetur adipisicing elit. Perferendis, dignissimos.</h1>
+        <h2 id="price">₹499</h2><h2 id="mrp">₹4999</h2><h4 id="discount">34% Discount</h2>
         <p id="desc">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi vero est ea amet minima sequi quaerat 
             quibusdam tempore repellat. Minus adipisci voluptates, distinctio architecto laboriosam temporibus ut 
@@ -69,51 +67,17 @@
         </p>
     </div>
     <div id="all-products">
-        <h1>More Products</h1>
-        <a href="product.html">
-        <div class="product" id="featured-1">
+        <h1>Shoes</h1>    
+        <!--
+        <div class="product">
             <img src="static/images/first.jpg" alt="">
-            <p class="product-price">Product Price Here</p>
+            <p class="product-price">₹499 <s>₹999</s> 30% Discount</p>
             <p class="product-desc">Product Discription Here</p>
         </div>
-        <div class="product" id="featured-2">
-            <img src="static/images/second.jpg" alt="" >
-            <p class="product-price">Product Price Here</p>
-            <p class="product-desc">Product Discription Here</p>
-        </div>
-        <div class="product" id="featured-3">
-            <img src="static/images/third.jpg" alt="" >
-            <p class="product-price">Product Price Here</p>
-            <p class="product-desc">Product Discription Here</p>
-        </div>
-        <div class="product" id="featured-4">
-            <img src="static/images/fourth.jpg" alt="" >
-            <p class="product-price">Product Price Here</p>
-            <p class="product-desc">Product Discription Here</p>
-        </div>
-        <div class="product" id="featured-1">
-            <img src="static/images/first.jpg" alt="">
-            <p class="product-price">Product Price Here</p>
-            <p class="product-desc">Product Discription Here</p>
-        </div>
-        <div class="product" id="featured-2">
-            <img src="static/images/second.jpg" alt="" >
-            <p class="product-price">Product Price Here</p>
-            <p class="product-desc">Product Discription Here</p>
-        </div>
-        <div class="product" id="featured-3">
-            <img src="static/images/third.jpg" alt="" >
-            <p class="product-price">Product Price Here</p>
-            <p class="product-desc">Product Discription Here</p>
-        </div>
-        <div class="product" id="featured-4">
-            <img src="static/images/fourth.jpg" alt="" >
-            <p class="product-price">Product Price Here</p>
-            <p class="product-desc">Product Discription Here</p>
-        </div>
-    </a>
+        -->
     </div>
+    <script src="static/js/back_recog.js"></script>
+    <script src="static/js/all_products.js"></script>
     <script src="static/js/product.js"></script>
-    <script src="static/js/index.js"></script>
 </body>
 </html>

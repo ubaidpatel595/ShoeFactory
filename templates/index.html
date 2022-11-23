@@ -33,20 +33,20 @@
     </div>
     
     <div id="carousel">
-        <img src="static/images/first.jpg" alt="" class="carousel-image" id="first-image">
-        <img src="static/images/second.jpg" alt="" class="carousel-image" id="second-image">
-        <img src="static/images/third.jpg" alt="" class="carousel-image" id="third-image">
-        <img src="static/images/fourth.jpg" alt="" class="carousel-image" id="fourth-image">
         <div id="buttons">
             <span id="prev" onclick="change_image(-1)">❮</span>   <span id="next" onclick="change_image(1)">❯</span>
         </div>
+        <img src="static/images/first.jpg" alt="" class="carousel-image" id="image-1">
+        <img src="static/images/second.jpg" alt="" class="carousel-image" id="image-2">
+        <img src="static/images/third.jpg" alt="" class="carousel-image" id="image-3">
+        <img src="static/images/fourth.jpg" alt="" class="carousel-image" id="image-4">
     </div>
 
     <div id="dots">
-        <span class="dot" id="first-dot"></span> 
-        <span class="dot" id="second-dot"></span>
-        <span class="dot" id="third-dot"></span>
-        <span class="dot" id="fourth-dot"></span>
+        <span class="dot" id="dot-1"></span> 
+        <span class="dot" id="dot-2"></span>
+        <span class="dot" id="dot-3"></span>
+        <span class="dot" id="dot-4"></span>
     </div>
 
     <div id="featured">
@@ -93,7 +93,15 @@
         sessionStorage.setItem("login_status","false");
         {% endif %}
 </script>
+<script src="static/js/back_recog.js"></script>
 <script src="static/js/all_products.js"></script>
- <script src="static/js/index.js"></script>
+<script src="static/js/index.js"></script>
+<script>
+    window.onload = setTimeout(aaa,1000)
+    function aaa(){
+        var carou_elems = document.getElementById("carousel").childElementCount-1;
+        return parseInt(carou_elems)
+    }
+</script>
 </body>
 </html>
