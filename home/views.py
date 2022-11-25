@@ -20,7 +20,7 @@ def uniq_str():
 
 def index(request):
     all_products = products.objects.all()
-    context = {"all_products":all_products}
+    context = {"request_user":request.user}
     return render(request,'index.html',context)
 
 def brands(request):
@@ -150,7 +150,7 @@ def api_featured(request):
      ls=[]
      for x in featured_prods:
         pl=[]
-        pid = x.pid
+        pid = x.pid.pid
         prod_details = products.objects.get(pid=pid)
         prod_title = prod_details.title
         prod_price = prod_details.price
@@ -166,5 +166,7 @@ def api_featured(request):
         ls.append(pl)
      return HttpResponse(str(ls))
 def cart_add(request):
-    pid=request.GET.get("pid")
-    return HttpResponse(pid)
+    pid=str(request.GET.get("pid"))
+    cart_obj = cart_items(pid=products.objects.get(pid=pid),user_name=User.objects.get(username=request.user))
+    cart_obj.save()
+    return HttpResponse("cart_obj")

@@ -78,6 +78,7 @@
 <script>
         {% if request.user.is_authenticated %}
         sessionStorage.setItem("login_status","true");
+        sessionStorage.setItem("req_user","{{request_user}}");
         {% else %}
         sessionStorage.setItem("login_status","false");
         {% endif %}

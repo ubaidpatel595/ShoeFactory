@@ -20,6 +20,7 @@
 }
 #add-cart{
     margin-right: 50px;
+    cursor: pointer;
 }
 #prod-desc{
     text-align: center;
