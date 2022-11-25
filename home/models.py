@@ -11,3 +11,11 @@ class products(models.Model):
     images = models.TextField(max_length=500,default="")
     def __str__(self):
         return f"Pid:{str(self.pid)}"
+class featured(models.Model):
+    id = models.AutoField(primary_key=True),
+    pid= models.TextField(default="",max_length=200)
+    def __str__(self):
+        return f"Featured: {self.id}, Pid: {self.pid}"
+class cart_items(models.Model):
+    pid = models.ForeignKey(products, on_delete=models.CASCADE)
+    user_name = models.TextField(default="",primary_key=True)

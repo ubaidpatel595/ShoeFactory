@@ -7,19 +7,8 @@
     <title>Test</title>
 </head>
 <body>
-    
-    <div id="backGroundColor" width="220" >
-        <img src="static/images/first.jpg" alt="" width="400" id="backgroundImage" >
-    </div>
-        
-        <script src="static/js/back_recog.js"></script>
-        <script>
-        var backgroundColorThief = new BackgroundColorTheif();
-        console.log(backgroundColorThief)
-        var rgb = backgroundColorThief.getBackGroundColor(document.getElementById("backgroundImage"));
-        var get_bg_color ='rgb(' + rgb[0] + ',' + rgb[1] + ',' + rgb[2] +')';
-        document.getElementById("backGroundColor").style.backgroundColor = get_bg_color;
-        </script>
-        
+    <h1>Hello</h1>
+    <div id="featured"></div>
+    <script src="static/js/featured.js"></script>
 </body>
 </html>

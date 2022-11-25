@@ -1,11 +1,11 @@
 //Making Product Prototype
-function create_prod(img_src,price,mrp,desc){
+function create_fet_prod(pid,img_src,price,mrp,desc){
     //Calculating Discount
     var perc = mrp/100;
     var discount = price/perc;
-    var discount = 100-discount;
-    var discount = String(discount);
-    var discount = discount.slice(0,2)
+    discount = 100-discount;
+    discount = String(discount);
+    discount = discount.slice(0,2)
 
     var link = `products?pid=${pid}`
     //Craeting Elements
@@ -33,29 +33,35 @@ function create_prod(img_src,price,mrp,desc){
     link_elem.appendChild(div); 
     return link_elem
 }
-var all_prods = document.getElementById("all-products");
-//Gettting Products From Api
-var fetch_data = new XMLHttpRequest();
-fetch_data.onload=data_clean;
-fetch_data.open("GET","api");
-fetch_data.send();
-function data_clean(){
-    var response = fetch_data.responseText;
-    var response = response.replace(/\'/g,"\"");
-    var response = JSON.parse(response);
-    data_abs(response);
+
+//Getting Featured Products
+var ajax = new XMLHttpRequest();
+ajax.onload=data_collect;
+ajax.open("GET","api/featured")
+ajax.send()
+function data_collect(){
+    let restext = ajax.responseText;
+    restext = restext.replace(/\'/g,"\"");
+    restext = JSON.parse(restext)
+    featured_abs(restext)
 }
 
+//Getting Product Details
+
+//Showing Details
+
+var all_fet_prods = document.getElementById("featured");
+//Gettting Products From Api
+
 //Data abstraction
-function data_abs (data){
-    for (x in data){
-        pid=data[x][0];
-        let title=data[x][1];
-        let price=data[x][2];
-        let mrp=data[x][3];
-        let delivery=data[x][4];
-        let desc=data[x][5];
-        let image=data[x][6][0];
-        all_prods.appendChild(create_prod(image,price,mrp,title))
+function featured_abs (fet_data){
+    for (x in fet_data){
+        data_pid = fet_data[x][0]
+        data_title = fet_data[x][1]
+        data_price = fet_data[x][2]
+        data_mrp = fet_data[x][3]
+        data_img = fet_data[x][4]
+        all_fet_prods.appendChild(create_fet_prod(data_pid,data_img,data_price,data_mrp,data_title))
     }
+        
 }

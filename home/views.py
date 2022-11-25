@@ -3,7 +3,7 @@ from django.contrib.auth import authenticate,login,logout
 from django.contrib import messages
 from django.contrib.auth.models import User
 from datetime import datetime
-from home.models import products
+from home.models import products,featured,cart_items
 #Function For Generating Unique String
 def uniq_str():
     curr_time=str(datetime.now())
@@ -27,10 +27,10 @@ def brands(request):
     return render(request,'brands.html')
 
 def about(request):
-    return render(request,'index.html')
+    return render(request,'about.html')
 
 def privacy(request):
-    return render(request,'index.html')
+    return render(request,'privacy.html')
 
 def login_user(request):
     if request.method == 'POST':
@@ -62,14 +62,15 @@ def signup(request):
     return render(request,'signup.html')
 
 def myprofile(request):
-    return render(request,'index.html')
+    return render(request,'myprofile.html')
 
 def cart(request):
-    return render(request,'index.html')
+    return render(request,'cart.html')
 
 def wishlist(request):
-    return render(request,'index.html')
-
+    return render(request,'wishlist.html')
+def order(request):
+    return render(request,"orders.html")
 def logout_user(request):
     logout(request)
     return redirect("/")
@@ -144,3 +145,26 @@ def api_product(request):
     response_list.append(eval(prod_n.images))
     print(response_list)
     return HttpResponse(str(response_list))
+def api_featured(request):
+     featured_prods = featured.objects.all()
+     ls=[]
+     for x in featured_prods:
+        pl=[]
+        pid = x.pid
+        prod_details = products.objects.get(pid=pid)
+        prod_title = prod_details.title
+        prod_price = prod_details.price
+        prod_mrp = prod_details.mrp
+        prod_desc = prod_details.desc
+        prod_img = eval(prod_details.images)
+        pl.append(pid)
+        pl.append(prod_title)
+        pl.append(prod_price)
+        pl.append(prod_mrp)
+        pl.append(str(prod_img[0]))
+       # pl.append(prod_desc)
+        ls.append(pl)
+     return HttpResponse(str(ls))
+def cart_add(request):
+    pid=request.GET.get("pid")
+    return HttpResponse(pid)

@@ -73,7 +73,8 @@
     background-color: rgba(0, 0, 0, 0.826);
 }
 #featured{
-    width: 92.5vw;
+    padding-left: 30px;
+    width: 90vw;
     height: 60vh;
     margin: auto;
     background-color: #c3ffd86a;
@@ -84,6 +85,7 @@
 #featured h1{
     margin-left: 10px;
     margin-top: 10px;
+
 }
 #featured-1{
     margin-left:3vw;
