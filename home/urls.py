@@ -7,6 +7,8 @@ urlpatterns = [
     path('about.html',views.about),
     path('privacy.html',views.privacy),
     path('cart.html',views.cart),
+    path('checkout.html',views.checkout),
+    path('api/cart_items',views.cart_api),
     path('myprofile.html',views.myprofile),  
     path('wishlist.html',views.wishlist),  
     path('orders.html',views.order),
@@ -20,4 +22,5 @@ urlpatterns = [
     path('api/product',views.api_product),
     path('api/featured',views.api_featured),
     path('api/addcart',views.cart_add),
+    path('api/cartcount',views.count_cart),
 ]

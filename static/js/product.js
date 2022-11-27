@@ -162,10 +162,31 @@ function rotate_drop(){
 function disc_calc(m_rp,p_rice){
     m_rp=parseInt(m_rp);
     p_rice=parseInt(p_rice);
-    var perc = m_rp/100;
-    var discount = p_rice/perc;
-    var discount = 100-discount;
-    var discount = String(discount);
-    var discount = discount.slice(0,2)
+    let perc = m_rp/100;
+    let discount = p_rice/perc;
+    discount = 100-discount;
+    discount = String(discount);
+    discount = discount.slice(0,2)
     return discount;
+}
+
+//Updating Cart With Numbers of Items
+let cart_cnt  = new XMLHttpRequest();
+cart_cnt.onload = function(){
+    let cart_items = this.responseText;
+    if(cart_items < 9){
+        document.getElementById("cart_items").innerHTML=cart_items;
+    }else{
+        document.getElementById("items-circle").setAttribute("r", "250")
+        document.getElementById("items-circle").setAttribute("cx", "740")
+        document.getElementById("items-circle").setAttribute("cy", "-110")
+        document.getElementById("cart_items").innerHTML=cart_items;
+    }
+}
+cart_cnt.open("GET","api/cartcount")
+cart_cnt.send()
+
+document.getElementById("buy-now").addEventListener("click",checkout)
+function checkout (){
+    location.href="checkout.html?pid="+pid
 }

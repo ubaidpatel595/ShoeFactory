@@ -64,9 +64,23 @@ def signup(request):
 def myprofile(request):
     return render(request,'myprofile.html')
 
+def cart_api(request):
+    user_id = request.user
+    items = cart_items.objects.filter(user_name = user_id)
+    items_list = []
+    for x in items:
+        prod_det = []
+        pid = (x.pid.pid)
+        prod = products.objects.get(pid=pid) 
+        prod_det.append(prod.pid)
+        prod_det.append(prod.title)
+        prod_det.append(prod.price)
+        prod_det.append(prod.mrp)
+        prod_det.append(str(eval(prod.images)[0]))
+        items_list.append(prod_det)
+    return HttpResponse(str(items_list))
 def cart(request):
-    return render(request,'cart.html')
-
+    return render(request,"cart.html")
 def wishlist(request):
     return render(request,'wishlist.html')
 def order(request):
@@ -169,4 +183,11 @@ def cart_add(request):
     pid=str(request.GET.get("pid"))
     cart_obj = cart_items(pid=products.objects.get(pid=pid),user_name=User.objects.get(username=request.user))
     cart_obj.save()
-    return HttpResponse("cart_obj")
+    return HttpResponse("True")
+def count_cart(request):
+    user = request.user
+    prod_cnt = len(cart_items.objects.filter(user_name = user))
+    return HttpResponse(prod_cnt)
+def checkout(request):
+    pid = request.GET.get("pid")
+    return render(request,'checkout.html')
