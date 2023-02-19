@@ -188,8 +188,10 @@ def cart_add(request):
     cart_obj.save()
     return HttpResponse("True")
 def count_cart(request):
-    user = request.user
-    prod_cnt = len(cart_items.objects.filter(user_name = user))
+    if request.user.is_authenticated:
+        prod_cnt = len(cart_items.objects.filter(user_name = request.user)) 
+    else:
+        prod_cnt = 0
     return HttpResponse(prod_cnt)
 def checkout(request):
     pid = request.GET.get("pid")

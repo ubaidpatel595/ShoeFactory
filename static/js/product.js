@@ -188,5 +188,5 @@ cart_cnt.send()
 
 document.getElementById("buy-now").addEventListener("click",checkout)
 function checkout (){
-    location.href="checkout.html?pid="+pid
+    location.href="checkout?pid="+pid
 }
