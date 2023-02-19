@@ -15,6 +15,7 @@ def uniq_str():
             continue
         else:
             time_string +=char
+    print(time_string)
     return time_string
 # Create your views here.
 
@@ -62,7 +63,9 @@ def signup(request):
     return render(request,'signup.html')
 
 def myprofile(request):
-    return render(request,'myprofile.html')
+    user = User.objects.get(username=request.user)
+    context = {"user": user}
+    return render(request,'myprofile.html',context)
 
 def cart_api(request):
     user_id = request.user
