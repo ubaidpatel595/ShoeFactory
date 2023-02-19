@@ -42,7 +42,7 @@ def login_user(request):
             login(request,auth_user)
             return redirect("/")
         else:
-            messages.success(request,"Incorect Password")
+            messages.success(request,"ENtered Incorect Password")
     return render(request,'login.html')
 
 def signup(request):
