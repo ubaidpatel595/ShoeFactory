@@ -18,6 +18,7 @@
     text-align: center;
 }
 #carousel{
+    max-width: 100%;
     z-index: 0;
     margin: auto;
     margin-top: 30px;
@@ -194,4 +195,12 @@ a{
 }
 body{
     overflow-y: scroll;
+}
+@media screen and (max-width:600px) {
+    #carousel{
+        width: 100%;
+    }
+    .carousel-image{
+        max-width: 100%;
+    }
 }
